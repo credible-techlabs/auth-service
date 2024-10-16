@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "auth-service"
+version = "0.1.0"
+description = ""
+authors = ["Ashish Arora <arora.ashish.ai@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.2"
+pydantic = "^2.9.2"
+mysql-connector-python = "^9.0.0"
+uvicorn = "^0.31.1"
+pyjwt = "^2.9.0"
+
+[tool.poetry.group.dev.dependencies]
+python-semantic-release = "^9.8.8"
+flake8 = "^7.1.1"
+pre-commit = "^3.8.0"
+black = "^24.8.0"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:tool.poetry.version"]
+build_command = "pip install poetry && poetry build"
+
+[tool.semantic_release.remote]
+name = "origin"
+type = "github"
+
+[tool.semantic_release.branches.main]
+match = "(main|master)"
+prerelease = false
+
+[tool.semantic_release.branches.feat]
+match = "(feat|fix|refactor)/.*"
+prerelease = true
+prerelease_token = "beta"
+
+[tool.semantic_release.commit_parser_options]
+patch_tags = ["fix", "chore", "style", "refactor"]
+allowed_tags = ["infra", "deploy", "feat", "fix", "chore", "style", "refactor", "docs", "test", "ci", "perf", "build"]
