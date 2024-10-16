@@ -1,6 +1,15 @@
 # CHANGELOG
 
 
+## v0.1.1 (2024-10-16)
+
+### Unknown
+
+* Merge pull request #1 from credible-techlabs/fix/create_ci_pipeline
+
+fix: adding ci pipeline ([`88331a2`](https://github.com/credible-techlabs/auth-service/commit/88331a2f36f03a816bfefc21e9ac1fe5f9a71d9b))
+
+
 ## v0.1.1-beta.1 (2024-10-16)
 
 ### Fixes
